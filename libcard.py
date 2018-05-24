@@ -14,14 +14,14 @@ class Deck(object):
 		super(Deck, self).__init__()
 		for i in ['spade', 'club', 'heart', 'diamond']:
 			for j in range(1, 14):
-				self.cards.append(Card(i, j))
+				self.cards.append({'suite':i, 'value': j})
 		random.seed(seed)
 		random.shuffle(self.cards)
 
 	def draw(self):
 		return self.cards.pop()
 
-	def shuffle(self, seed):
+	def shuffle(self, seed=0):
 		random.seed(seed)
 		random.shuffle(self.cards)
 
